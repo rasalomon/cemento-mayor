@@ -1,0 +1,16 @@
+{
+  "name": "Cemento Mayor",
+  "short_name": "Cemento Mayor",
+  "description": "Soluciones en hormigon y construccion para proyectos residenciales, comerciales e industriales.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f4f4",
+  "theme_color": "#d3a63f",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}
