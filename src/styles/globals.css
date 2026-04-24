@@ -1,0 +1,118 @@
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+.main-content {
+  min-height: 70vh;
+}
+
+.section-block {
+  padding: var(--space-3xl) 0;
+}
+
+.section-block--alt {
+  background: var(--color-bg-alt);
+}
+
+.section-block--dark {
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+
+.container {
+  width: min(var(--container-width), calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.section-title {
+  margin-bottom: var(--space-xl);
+  max-width: 760px;
+}
+
+.section-title.is-centered {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.section-title__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-mustard-dark);
+  font-weight: 700;
+  font-size: 0.82rem;
+  margin-bottom: var(--space-sm);
+}
+
+.section-title__subtitle {
+  color: var(--color-text-soft);
+  margin-top: var(--space-sm);
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.3rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  transition: transform var(--transition), background var(--transition), color var(--transition);
+}
+
+.cta-button:hover {
+  transform: translateY(-1px);
+}
+
+.cta-button--primary {
+  background: var(--color-mustard);
+  color: var(--color-dark);
+}
+
+.cta-button--primary:hover {
+  background: var(--color-mustard-dark);
+  color: var(--color-white);
+}
+
+.cta-button--secondary {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.28);
+  color: currentColor;
+}
+
+.cards-grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.cards-grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cards-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 980px) {
+  .cards-grid--three,
+  .cards-grid--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .container {
+    width: min(var(--container-width), calc(100% - 1.5rem));
+  }
+
+  .section-block {
+    padding: 3.5rem 0;
+  }
+
+  .cards-grid--three,
+  .cards-grid--two {
+    grid-template-columns: 1fr;
+  }
+}

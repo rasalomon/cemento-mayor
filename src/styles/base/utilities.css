@@ -1,0 +1,11 @@
+.not-found {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+}
+
+.not-found h1 {
+  font-size: 5rem;
+  color: var(--color-mustard-dark);
+}

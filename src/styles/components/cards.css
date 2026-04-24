@@ -1,0 +1,82 @@
+.service-card,
+.about-card,
+.contact-card,
+.map-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.service-card {
+  padding: 1.4rem;
+  border: 1px solid rgba(31, 31, 31, 0.06);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.service-card h3 {
+  margin-bottom: 0.6rem;
+}
+
+.home-intro-text {
+  max-width: 860px;
+}
+
+.about-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+
+.about-card {
+  padding: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.about-list {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 0.7rem;
+}
+
+.about-list li {
+  position: relative;
+  padding-left: 1.1rem;
+}
+
+.about-list li::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-mustard);
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+}
+
+.home-cta {
+  text-align: center;
+  max-width: 780px;
+}
+
+.home-cta h2 {
+  margin-bottom: 0.6rem;
+}
+
+.home-cta p {
+  color: #d4d4d4;
+  margin-bottom: 1.2rem;
+}
+
+@media (max-width: 860px) {
+  .about-preview {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
