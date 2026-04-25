@@ -46,7 +46,7 @@
 .products-type__media {
   display: flex;
   align-items: flex-end;
-  min-height: 108px;
+  min-height: 70px;
   padding: 1rem 1.15rem;
   background:
     linear-gradient(135deg, rgba(21, 21, 21, 0.92), rgba(66, 66, 66, 0.9)),
