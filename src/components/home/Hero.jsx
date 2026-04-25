@@ -10,7 +10,7 @@ function Hero() {
         <p className="hero__eyebrow">Cemento Mayor</p>
         <h1>Soluciones en hormigon y pisos para proyectos que exigen resultados</h1>
         <p>
-          Acompanamos tu obra con calidad tecnica, cumplimiento y un equipo preparado para responder en cada
+          Acompañamos tu obra con calidad tecnica, cumplimiento y un equipo preparado para responder en cada
           etapa.
         </p>
         <div className="hero__actions">
