@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import Container from "../common/Container";
 import { APP_NAME, NAV_LINKS } from "../../constants";
 import MobileMenu from "./MobileMenu";
+import CTAButton from "../common/CTAButton";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,8 +12,15 @@ function Header() {
     <header className="site-header">
       <Container className="site-header__inner">
         <NavLink to="/" className="site-logo" aria-label={`${APP_NAME} inicio`}>
-          <span className="site-logo__mark">CM</span>
-          <span>{APP_NAME}</span>
+          <span className="site-logo__mark" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </span>
+          <span className="site-logo__wordmark">
+            <span>CEMENTO</span>
+            <strong>MAYOR</strong>
+          </span>
         </NavLink>
 
         <nav className="site-nav" aria-label="Navegacion principal">
@@ -26,6 +34,10 @@ function Header() {
             </NavLink>
           ))}
         </nav>
+
+        <CTAButton to="/contact" className="site-header__cta">
+          COTIZAR AHORA
+        </CTAButton>
 
         <button
           className="menu-toggle"

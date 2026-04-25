@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-function CTAButton({ children, to, href, variant = "primary", external = false }) {
-  const classes = `cta-button cta-button--${variant}`;
+function CTAButton({ children, to, href, variant = "primary", external = false, className = "", type = "button" }) {
+  const classes = `cta-button cta-button--${variant} ${className}`.trim();
 
   if (to) {
     return (
@@ -24,7 +24,11 @@ function CTAButton({ children, to, href, variant = "primary", external = false }
     );
   }
 
-  return <button className={classes}>{children}</button>;
+  return (
+    <button className={classes} type={type}>
+      {children}
+    </button>
+  );
 }
 
 export default CTAButton;

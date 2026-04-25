@@ -60,6 +60,7 @@ body {
   border: 1px solid transparent;
   font-weight: 600;
   transition: transform var(--transition), background var(--transition), color var(--transition);
+  white-space: nowrap;
 }
 
 .cta-button:hover {
@@ -80,6 +81,15 @@ body {
   background: transparent;
   border-color: rgba(255, 255, 255, 0.28);
   color: currentColor;
+}
+
+.cta-button--dark {
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+
+.cta-button--dark:hover {
+  background: #303030;
 }
 
 .cards-grid {

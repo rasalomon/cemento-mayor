@@ -16,6 +16,9 @@ function MobileMenu({ isOpen, links, onClose }) {
               {link.label}
             </NavLink>
           ))}
+          <NavLink to="/contact" className="mobile-menu__cta" onClick={onClose}>
+            COTIZAR AHORA
+          </NavLink>
         </nav>
       </Container>
     </div>

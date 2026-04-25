@@ -9,8 +9,8 @@ export const GOOGLE_MAPS_EMBED_URL =
 export const NAV_LINKS = [
   { label: "Inicio", path: "/" },
   { label: "Servicios", path: "/services" },
-    { label: "Productos", path: "/products" },
-    { label: "Galeria", path: "/gallery" },
+  { label: "Productos", path: "/products" },
+  { label: "Obras", path: "/gallery" },
   { label: "Nosotros", path: "/about" },
   { label: "Contacto", path: "/contact" },
 ];
