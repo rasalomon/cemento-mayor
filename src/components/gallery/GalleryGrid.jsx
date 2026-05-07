@@ -2,6 +2,19 @@ import { useEffect, useState } from "react";
 
 function GalleryGrid({ items }) {
   const [selectedItem, setSelectedItem] = useState(null);
+  const safeItems = Array.isArray(items)
+    ? items.filter(
+        (item) =>
+          item &&
+          typeof item === "object" &&
+          item.id != null &&
+          item.src &&
+          item.title &&
+          item.category &&
+          item.description &&
+          item.alt
+      )
+    : [];
 
   useEffect(() => {
     if (!selectedItem) {
@@ -26,7 +39,7 @@ function GalleryGrid({ items }) {
   return (
     <>
       <div className="gallery-grid">
-        {items.map((item) => (
+        {safeItems.map((item) => (
           <article key={item.id} className="gallery-item">
             <button
               className="gallery-item__button"

@@ -95,9 +95,18 @@ const galleryContent = {
 
 const getContentKey = (fileName) => fileName.replace(/-\d+\.\w+$/, "");
 
-const galleryImages = galleryFiles.map((fileName, index) => {
+const fallbackContent = {
+  title: "Registro de obra",
+  category: "Galeria",
+  description: "Imagen de referencia de proyecto en ejecucion.",
+  alt: "Registro fotografico de obra",
+};
+
+const galleryImages = galleryFiles
+  .filter((fileName) => typeof fileName === "string" && fileName.trim().length > 0)
+  .map((fileName, index) => {
   const key = getContentKey(fileName);
-  const content = galleryContent[key];
+  const content = galleryContent[key] ?? fallbackContent;
   const number = String(index + 1).padStart(2, "0");
 
   return {
