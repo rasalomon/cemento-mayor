@@ -1,4 +1,4 @@
-import Hero from "../components/home/Hero";
+import HeroSection from "../components/home/HeroSection";
 import Container from "../components/common/Container";
 import SectionTitle from "../components/common/SectionTitle";
 import ServiceCard from "../components/services/ServiceCard";
@@ -12,7 +12,7 @@ function HomePage() {
 
   return (
     <>
-      <Hero />
+      <HeroSection />
 
       <section className="section-block">
         <Container>
