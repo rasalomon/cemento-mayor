@@ -1,8 +1,8 @@
 const products = [
   {
     id: "h-con-fibra",
-    nombre: "H con fibra",
-    title: "H con fibra",
+    nombre: "Hormigón con fibra",
+    title: "Hormigón con fibra",
     categoria: "Hormigones para pisos",
     description:
       "Hormigon reforzado con fibras para mejorar el control de fisuracion y aumentar la durabilidad en pisos, plateas y superficies de alto transito.",
@@ -13,8 +13,8 @@ const products = [
   },
   {
     id: "h-estructural",
-    nombre: "H estructural",
-    title: "H estructural",
+    nombre: "Hormigón estructural",
+    title: "Hormigón estructural",
     categoria: "Hormigones estructurales",
     description:
       "Hormigon disenado para elementos que requieren resistencia mecanica, estabilidad y cumplimiento tecnico en obras civiles, comerciales e industriales.",
@@ -25,8 +25,8 @@ const products = [
   },
   {
     id: "h-limpieza",
-    nombre: "H de limpieza",
-    title: "H de limpieza",
+    nombre: "Hormigón de limpieza",
+    title: "Hormigón de limpieza",
     categoria: "Preparacion de obra",
     description:
       "Hormigon utilizado como base de nivelacion y preparacion del terreno antes de ejecutar fundaciones, plateas o estructuras principales.",
@@ -61,8 +61,8 @@ const products = [
   },
   {
     id: "h-resistencia-edad-temprana",
-    nombre: "H de resistencia a edad temprana",
-    title: "H de resistencia a edad temprana",
+    nombre: "Hormigón de resistencia a edad temprana",
+    title: "Hormigón de resistencia a edad temprana",
     categoria: "Hormigones especiales",
     description:
       "Hormigon formulado para alcanzar resistencia rapidamente, recomendado para obras con tiempos ajustados o habilitacion temprana.",
@@ -73,8 +73,8 @@ const products = [
   },
   {
     id: "h-autocompactante",
-    nombre: "H autocompactante",
-    title: "H autocompactante",
+    nombre: "Hormigón autocompactante",
+    title: "Hormigón autocompactante",
     categoria: "Hormigones especiales",
     description:
       "Hormigon de alta fluidez que se acomoda sin vibrado intenso, ideal para estructuras con mucha armadura o moldes complejos.",
