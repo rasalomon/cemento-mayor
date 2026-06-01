@@ -8,7 +8,7 @@ function Footer() {
         <section>
           <h3>{APP_NAME}</h3>
           <p>
-            Soluciones profesionales en hormigon, pisos y obras a medida para construccion residencial,
+            Soluciones profesionales en hormigón, pisos y obras a medida para construcción residencial,
             comercial e industrial.
           </p>
         </section>

@@ -18,8 +18,8 @@ function HomePage() {
         <Container>
           <SectionTitle
             eyebrow="Bienvenidos"
-            title="Compromiso tecnico para obras de alto rendimiento"
-            subtitle="Trabajamos con procesos claros y supervision constante para garantizar calidad en cada etapa."
+            title="Compromiso técnico para tus Obras"
+            subtitle="Trabajamos con procesos claros y supervisión constante para garantizar calidad en cada etapa."
           />
           <p className="home-intro-text">{companyInfo.intro}</p>
         </Container>
@@ -29,8 +29,8 @@ function HomePage() {
         <Container>
           <SectionTitle
             eyebrow="Servicios destacados"
-            title="Soluciones clave para tu proyecto"
-            subtitle="Aplicamos experiencia en obra para resolver necesidades de construccion con eficiencia y precision."
+            title="Equipos de alta tecnología que brindan confianza para tu proyecto"
+            subtitle="Impulsamos tu proyecto con soluciones tecnológicas que maximizan rendimiento y calidad."
             centered
           />
           <div className="cards-grid cards-grid--three">
@@ -46,8 +46,8 @@ function HomePage() {
           <div>
             <SectionTitle
               eyebrow="Quienes somos"
-              title="Un equipo confiable para acompanar tu obra"
-              subtitle="Integramos planificacion, materiales y ejecucion para que cada entrega cumpla tus objetivos."
+              title="Un equipo confiable para acompañar tu obra"
+              subtitle="Integramos planificación, materiales y ejecución para que cada entrega cumpla tus objetivos."
             />
           </div>
           <CTAButton to="/about" variant="secondary">
@@ -59,7 +59,7 @@ function HomePage() {
       <section className="section-block section-block--dark">
         <Container className="home-cta">
           <h2>Necesitas una propuesta para tu proyecto?</h2>
-          <p>Coordinemos una evaluacion tecnica y avancemos con una solucion adaptada a tu necesidad.</p>
+          <p>Coordinemos una evaluación técnica y avancemos con una solución adaptada a tu necesidad.</p>
           <CTAButton to="/contact">Hablar con Cemento Mayor</CTAButton>
         </Container>
       </section>

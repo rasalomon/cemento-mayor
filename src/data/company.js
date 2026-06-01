@@ -1,15 +1,15 @@
 const companyInfo = {
   intro:
-    "Somos una empresa especializada en soluciones de hormigon y construccion de pisos, orientada a proyectos que exigen calidad, cumplimiento y soporte tecnico.",
+    "Somos una empresa especializada en brindar soluciones de hormigón, orientada a proyectos que exigen calidad, cumplimiento y soporte técnico.",
   mission:
-    "Brindar servicios de hormigon y construccion con altos estandares tecnicos, priorizando seguridad, eficiencia y resultados duraderos.",
+    "Brindar servicios de hormigón y construcción con altos estandares tecnicos, priorizando seguridad, eficiencia y resultados duraderos.",
   vision:
-    "Ser la empresa referente en Uruguay en soluciones de hormigon y pisos industriales por nuestra confiabilidad y excelencia operativa.",
+    "Ser la empresa referente en Uruguay en soluciones de hormigón y pisos industriales por nuestra confiabilidad y excelencia operativa.",
   reasons: [
-    "Equipo tecnico con experiencia en obras de distinta escala.",
-    "Planificacion precisa para cumplir plazos y presupuestos.",
+    "Equipo técnico con experiencia en obras de distinta escala.",
+    "Planificación precisa para cumplir plazos y presupuestos.",
     "Materiales de calidad y procesos estandarizados.",
-    "Atencion cercana y respuestas rapidas para cada proyecto.",
+    "Atención cercana y respuestas rápidas para cada proyecto.",
   ],
 };
 

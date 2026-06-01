@@ -1,24 +1,21 @@
 import { useMemo, useState } from "react";
 
 const CONCRETE_TYPES = [
-  "H con fibra",
-  "H estructural",
-  "H de limpieza",
-  "Mortero autonivelante",
+  "Hormig\u00F3n para pisos con fibra",
+  "Hormig\u00F3n Estructural",
+  "Hormig\u00F3n de P\u00E1pida Habilitaci\u00F3n",
+  "Hormig\u00F3n Autocompactante",
+  "Mortero Autonivelante",
   "RDC",
-  "H resistencia temprana",
-  "H autocompactante",
   "Mortero 1:4",
 ];
 
 const PRICE_PER_M3 = {
-  "H con fibra": 7200,
-  "H estructural": 6800,
-  "H de limpieza": 5900,
-  "Mortero autonivelante": 8100,
-  RDC: 5600,
-  "H resistencia temprana": 7600,
-  "H autocompactante": 8400,
+  "Hormig\u00F3n para pisos con fibra": 7200,
+  "Hormig\u00F3n Estructural": 6800,
+  "Hormig\u00F3n de P\u00E1pida Habilitaci\u00F3n": 5900,
+  "Hormig\u00F3n Autocompactante": 8100,
+  "RDC": 5600,
   "Mortero 1:4": 6100,
 };
 
@@ -47,32 +44,32 @@ function ConcreteCalculator() {
     const nextErrors = {};
     const numericVolume = Number(volume);
 
-    if (!type) nextErrors.type = "Selecciona un tipo de hormigon.";
+    if (!type) nextErrors.type = "Selecciona un tipo de hormig\u00F3n.";
     if (!volume || Number.isNaN(numericVolume) || numericVolume <= 0) {
-      nextErrors.volume = "Ingresa un volumen valido mayor a 0.";
+      nextErrors.volume = "Ingresa un volumen v\u00E1lido mayor a 0.";
     }
-    if (!location.trim()) nextErrors.location = "Ingresa la ubicacion de obra.";
+    if (!location.trim()) nextErrors.location = "Ingresa la ubicaci\u00F3n de obra.";
 
     setErrors(nextErrors);
     setShowResult(Object.keys(nextErrors).length === 0);
   };
 
   return (
-    <aside className="calculator-card calculator-card--in-phone" aria-label="Calculadora de cotizacion de hormigon">
+    <aside className="calculator-card calculator-card--in-phone" aria-label="Calculadora de cotizaci\u00F3n de hormig\u00F3n">
       <div className="calculator-card__header">
-        <h2 className="calculator-card__title">COTIZACION DE HORMIGON</h2>
+        <h2 className="calculator-card__title">COTIZACIÓN DE HORMIGÓN</h2>
         <div className="calculator-card__stripe" aria-hidden="true" />
       </div>
 
       <form className="calculator-form" onSubmit={handleSubmit} noValidate>
-        <label htmlFor="concrete-type">Tipo de hormigon</label>
+        <label htmlFor="concrete-type">Tipo de hormigón</label>
         <select
           id="concrete-type"
           value={type}
           onChange={(event) => setType(event.target.value)}
           aria-invalid={Boolean(errors.type)}
         >
-          <option value="">Selecciona una opcion</option>
+          <option value="">Selecciona una opción</option>
           {CONCRETE_TYPES.map((item) => (
             <option key={item} value={item}>
               {item}

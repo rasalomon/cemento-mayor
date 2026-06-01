@@ -12,7 +12,7 @@ function ServicesPage() {
       <Container>
         <SectionTitle
           eyebrow="Servicios"
-          title="Cobertura integral para obras de hormigon y pisos"
+          title="Cobertura integral para obras de hormigón y pisos"
           subtitle="Selecciona el servicio que mejor se adapte a tu proyecto."
           centered
         />

@@ -10,15 +10,15 @@ function HeroSection() {
       <Container className="hero__content hero__content--split">
         <div className="hero__left">
           <p className="hero__eyebrow">Cemento Mayor</p>
-          <h1>Soluciones en hormigon y pisos para proyectos que exigen resultados</h1>
+          <h1>Soluciones en hormigón para proyectos que exigen resultados</h1>
           <p>
-            Acompanamos tu obra con calidad tecnica, cumplimiento y un equipo preparado para responder en cada
+            Acompanamos tu obra con calidad técnica, cumplimiento y un equipo preparado para responder en cada
             etapa.
           </p>
           <div className="hero__actions">
             <CTAButton to="/services">Ver servicios</CTAButton>
             <CTAButton to="/contact" variant="secondary">
-              Solicitar cotizacion
+              Solicitar cotización
             </CTAButton>
           </div>
         </div>

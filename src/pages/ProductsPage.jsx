@@ -13,7 +13,7 @@ function ProductsPage() {
         <SectionTitle
           eyebrow="Productos"
           title="Hormigones y morteros para cada etapa de obra"
-          subtitle="Soluciones elaboradas con control tecnico para pisos, estructuras, rellenos y terminaciones."
+          subtitle="Soluciones elaboradas con control técnico para pisos, estructuras, rellenos y terminaciones."
           centered
         />
         <div className="cards-grid cards-grid--three">

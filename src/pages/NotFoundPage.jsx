@@ -3,13 +3,13 @@ import Container from "../components/common/Container";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 
 function NotFoundPage() {
-  useDocumentTitle("Pagina no encontrada");
+  useDocumentTitle("Página no encontrada");
 
   return (
     <section className="section-block">
       <Container className="not-found">
         <h1>404</h1>
-        <p>La pagina solicitada no existe.</p>
+        <p>La página solicitada no existe.</p>
         <Link to="/" className="cta-button cta-button--primary">
           Volver al inicio
         </Link>

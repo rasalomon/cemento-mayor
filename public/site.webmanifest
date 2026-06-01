@@ -1,7 +1,7 @@
 {
   "name": "Cemento Mayor",
   "short_name": "Cemento Mayor",
-  "description": "Soluciones en hormigon y construccion para proyectos residenciales, comerciales e industriales.",
+  "description": "Soluciones en hormigón y construcción para proyectos residenciales, comerciales e industriales.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f4f4f4",

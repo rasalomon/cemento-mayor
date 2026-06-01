@@ -16,7 +16,7 @@ function ContactPage() {
 
   const whatsappLink = formatWhatsappLink(
     WHATSAPP_NUMBER,
-    "Hola Cemento Mayor, quiero solicitar una cotizacion."
+    "Hola Cemento Mayor, quiero solicitar una cotización."
   );
 
   return (
@@ -38,7 +38,7 @@ function ContactPage() {
             <h3>Canales directos</h3>
             <p>Email: {COMPANY_EMAIL}</p>
             <p>Telefono: +598 0000 0000</p>
-            <p>Direccion: Ruta y direccion de oficina (placeholder)</p>
+            <p>Direccion: Ruta y dirección de oficina (placeholder)</p>
             <p className="contact-card__env">API configurada: {API_URL}</p>
             <CTAButton href={whatsappLink} external>
               Escribir por WhatsApp
@@ -47,7 +47,7 @@ function ContactPage() {
         </div>
 
         <section className="map-card" aria-label="Ubicacion en mapa">
-          <h3>Ubicacion</h3>
+          <h3>Ubicación</h3>
           <iframe
             title="Mapa de Cemento Mayor"
             src={GOOGLE_MAPS_EMBED_URL}

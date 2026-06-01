@@ -56,40 +56,40 @@ const galleryFiles = [
 
 const galleryContent = {
   "hormigon-obra": {
-    title: "Hormigon en obra",
-    category: "Hormigon",
-    description: "Suministro de hormigon para obras civiles y proyectos en ejecucion.",
-    alt: "Hormigon aplicado en obra de construccion",
+    title: "Hormigón en obra",
+    category: "Hormigón",
+    description: "Suministro de hormigón para obras civiles y proyectos en ejecución.",
+    alt: "Hormigón aplicado en obra de construcción",
   },
   "piso-industrial": {
     title: "Piso industrial",
     category: "Pisos industriales",
-    description: "Ejecucion de superficies resistentes para uso industrial y logistico.",
-    alt: "Piso industrial de hormigon terminado",
+    description: "Ejecución de superficies resistentes para uso industrial y logístico.",
+    alt: "Piso industrial de hormigón terminado",
   },
   "concretera-obra": {
     title: "Concretera en obra",
     category: "Concreteras",
-    description: "Despacho y descarga de hormigon con equipos preparados para obra.",
-    alt: "Camion concretera trabajando en obra",
+    description: "Despacho y descarga de hormigón con equipos preparados para obra.",
+    alt: "Camión concretera trabajando en obra",
   },
   "terminacion-hormigon": {
-    title: "Terminacion de hormigon",
+    title: "Terminación de hormigón",
     category: "Terminaciones",
-    description: "Detalle de terminaciones y procesos de acabado sobre hormigon.",
-    alt: "Terminacion profesional de superficie de hormigon",
+    description: "Detalle de terminaciones y procesos de acabado sobre hormigón.",
+    alt: "Terminación profesional de superficie de hormigón",
   },
   "maquinaria-obra": {
     title: "Maquinaria en obra",
     category: "Maquinaria",
-    description: "Equipos y herramientas de apoyo para trabajos de hormigon.",
-    alt: "Maquinaria utilizada en trabajos de hormigon",
+    description: "Equipos y herramientas de apoyo para trabajos de hormigón.",
+    alt: "Maquinaria utilizada en trabajos de hormigón",
   },
   "obra-hormigon": {
     title: "Proyecto de obra",
     category: "Obras",
-    description: "Avance de obra con soluciones de hormigon para distintos proyectos.",
-    alt: "Obra en ejecucion con soluciones de hormigon",
+    description: "Avance de obra con soluciones de hormigón para distintos proyectos.",
+    alt: "Obra en ejecución con soluciones de hormigón",
   },
 };
 
@@ -98,8 +98,8 @@ const getContentKey = (fileName) => fileName.replace(/-\d+\.\w+$/, "");
 const fallbackContent = {
   title: "Registro de obra",
   category: "Galeria",
-  description: "Imagen de referencia de proyecto en ejecucion.",
-  alt: "Registro fotografico de obra",
+  description: "Imagen de referencia de proyecto en ejecución.",
+  alt: "Registro fotográfico de obra",
 };
 
 const galleryImages = galleryFiles

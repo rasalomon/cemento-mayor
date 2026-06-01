@@ -19,10 +19,10 @@ function ContactForm() {
       <label htmlFor="service">Servicio de interes</label>
       <select id="service" name="service" required>
         <option value="">Selecciona un servicio</option>
-        <option value="hormigon">Hormigon elaborado</option>
-        <option value="bombeo">Bombeo de hormigon</option>
+        <option value="hormigon">Hormigón elaborado</option>
+        <option value="bombeo">Bombeo de hormigón</option>
         <option value="pisos">Pisos industriales</option>
-        <option value="asesoria">Asesoria tecnica</option>
+        <option value="asesoria">Asesoria técnica</option>
         <option value="custom">Obra a medida</option>
       </select>
 

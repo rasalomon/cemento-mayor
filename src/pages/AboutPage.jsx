@@ -16,17 +16,17 @@ function AboutPage() {
         />
 
         <article className="about-card">
-          <h3>Presentacion</h3>
+          <h3>Presentación</h3>
           <p>{companyInfo.intro}</p>
         </article>
 
         <div className="cards-grid cards-grid--two">
           <article className="service-card">
-            <h3>Mision</h3>
+            <h3>Misión</h3>
             <p>{companyInfo.mission}</p>
           </article>
           <article className="service-card">
-            <h3>Vision</h3>
+            <h3>Visión</h3>
             <p>{companyInfo.vision}</p>
           </article>
         </div>

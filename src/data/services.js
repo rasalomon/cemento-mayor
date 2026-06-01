@@ -1,39 +1,39 @@
 const services = [
   {
     id: "ready-mix",
-    title: "Hormigon elaborado",
+    title: "Hormigón elaborado",
     description:
-      "Suministro de hormigon de alta calidad con control tecnico para obras residenciales, comerciales e industriales.",
+      "Suministro de hormigón de alta calidad con control técnico para obras residenciales, comerciales e industriales.",
   },
   {
     id: "pumping",
-    title: "Bombeo de hormigon",
+    title: "Bombeo de hormigón",
     description:
-      "Equipos modernos para alcance eficiente en altura y zonas de dificil acceso, reduciendo tiempos de ejecucion.",
+      "Equipos modernos para alcance eficiente en altura y zonas de dificil acceso, reduciendo tiempos de ejecución.",
   },
   {
-    id: "floor-construction",
-    title: "Construccion de pisos",
+    id: "floor-constructión",
+    title: "Construcción de pisos",
     description:
-      "Ejecucion integral de pisos de hormigon para galpones, estacionamientos y espacios de alto transito.",
+      "Ejecución integral de pisos de hormigón para galpones, estacionamientos y espacios de alto tránsito.",
   },
   {
     id: "industrial-floors",
     title: "Pisos industriales",
     description:
-      "Superficies resistentes al desgaste, trafico pesado y exigencias operativas, con terminaciones profesionales.",
+      "Superficies resistentes al desgaste, tráfico pesado y exigencias operativas, con terminaciones profesionales.",
   },
   {
     id: "technical-advice",
-    title: "Asesoria tecnica",
+    title: "Asesoria técnica",
     description:
-      "Acompanamiento de ingenieria para especificaciones, dosificaciones y mejores practicas en obra.",
+      "Acompanamiento de ingeniería para especificaciones, dosificaciones y mejores prácticas en obra.",
   },
   {
     id: "custom-works",
     title: "Obras a medida",
     description:
-      "Soluciones personalizadas para requerimientos especiales de construccion, refuerzo y ampliacion.",
+      "Soluciones personalizadas para requerimientos especiales de construcción, refuerzo y ampliación.",
   },
 ];
 
