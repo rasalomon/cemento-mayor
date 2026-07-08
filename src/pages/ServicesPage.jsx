@@ -18,7 +18,13 @@ function ServicesPage() {
         />
         <div className="cards-grid cards-grid--three">
           {services.map((service) => (
-              <ServiceCard key={service.id} title={service.title} description={service.description} />
+            <ServiceCard
+              key={service.id}
+              title={service.title}
+              description={service.description}
+              image={service.image}
+              imageOnly={service.imageOnly}
+            />
           ))}
         </div>
       </Container>

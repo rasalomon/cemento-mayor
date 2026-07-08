@@ -37,7 +37,7 @@ function ContactPage() {
           <aside className="contact-card">
             <h3>Canales directos</h3>
             <p>Email: {COMPANY_EMAIL}</p>
-            <p>Telefono: +598 0000 0000</p>
+            <p>Telefono: {WHATSAPP_NUMBER}</p>
             <p>Direccion: Ruta y dirección de oficina (placeholder)</p>
             <p className="contact-card__env">API configurada: {API_URL}</p>
             <CTAButton href={whatsappLink} external>

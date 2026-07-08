@@ -17,8 +17,8 @@ function Footer() {
           <h3>Contacto</h3>
           <ul>
             <li>Email: {COMPANY_EMAIL}</li>
-            <li>WhatsApp: +{WHATSAPP_NUMBER}</li>
-            <li>Telefono: +598 0000 0000</li>
+            <li>WhatsApp: {WHATSAPP_NUMBER}</li>
+            <li>Telefono: +598 99 410 000</li>
           </ul>
         </section>
 

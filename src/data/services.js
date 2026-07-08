@@ -1,39 +1,27 @@
 const services = [
   {
-    id: "ready-mix",
-    title: "Hormigón elaborado",
+    id: "planta-mezcladora",
+    title: "Planta Mezcladora",
     description:
       "Suministro de hormigón de alta calidad con control técnico para obras residenciales, comerciales e industriales.",
+    image: "/images/gallery/PM.png",
+    imageOnly: true,
   },
   {
     id: "pumping",
-    title: "Bombeo de hormigón",
+    title: "Bomba de hormigón",
     description:
       "Equipos modernos para alcance eficiente en altura y zonas de dificil acceso, reduciendo tiempos de ejecución.",
+    image: "/images/gallery/Bomba.png",
+    imageOnly: true,
   },
   {
     id: "floor-constructión",
-    title: "Construcción de pisos",
+    title: "Regla laser para pisos",
     description:
       "Ejecución integral de pisos de hormigón para galpones, estacionamientos y espacios de alto tránsito.",
-  },
-  {
-    id: "industrial-floors",
-    title: "Pisos industriales",
-    description:
-      "Superficies resistentes al desgaste, tráfico pesado y exigencias operativas, con terminaciones profesionales.",
-  },
-  {
-    id: "technical-advice",
-    title: "Asesoria técnica",
-    description:
-      "Acompanamiento de ingeniería para especificaciones, dosificaciones y mejores prácticas en obra.",
-  },
-  {
-    id: "custom-works",
-    title: "Obras a medida",
-    description:
-      "Soluciones personalizadas para requerimientos especiales de construcción, refuerzo y ampliación.",
+    image: "/images/gallery/ReglaLaser.png",
+    imageOnly: true,
   },
 ];
 
