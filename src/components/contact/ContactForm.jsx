@@ -1,6 +1,6 @@
 import CTAButton from "../common/CTAButton";
-
-const CONTACT_EMAIL = "ventas@cementomayor.com.uy";
+import { WHATSAPP_NUMBER } from "../../constants";
+import { formatWhatsappLink } from "../../utils/formatters";
 
 const serviceLabels = {
   hormigon: "Hormigón elaborado",
@@ -15,25 +15,26 @@ function ContactForm() {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
-    const data = Object.fromEntries(formData.entries());
-    const selectedService = serviceLabels[data.service] ?? data.service;
+    const nombre = formData.get("name");
+    const telefono = formData.get("phone");
+    const email = formData.get("email");
+    const servicio = formData.get("service");
+    const mensaje = formData.get("message");
+    const servicioInteres = serviceLabels[servicio] ?? servicio;
 
-    const subject = `Consulta web - ${data.name}`;
-    const body = [
-      "Nueva consulta desde el sitio web de Cemento Mayor:",
+    const whatsappMessage = [
+      "Hola Cemento Mayor, quiero hacer una consulta.",
       "",
-      `Nombre: ${data.name}`,
-      `Telefono: ${data.phone}`,
-      `Email: ${data.email}`,
-      `Servicio de interes: ${selectedService}`,
+      `Nombre: ${nombre}`,
+      `Telefono: ${telefono}`,
+      `Email: ${email}`,
+      `Servicio de interes: ${servicioInteres}`,
       "",
       "Mensaje:",
-      data.message,
+      mensaje,
     ].join("\n");
 
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
+    window.open(formatWhatsappLink(WHATSAPP_NUMBER, whatsappMessage), "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -41,7 +42,7 @@ function ContactForm() {
       <label htmlFor="name">Nombre</label>
       <input id="name" name="name" type="text" placeholder="Tu nombre" required />
 
-      <label htmlFor="phone">Telefono</label>
+      <label htmlFor="phone">Teléfono</label>
       <input id="phone" name="phone" type="tel" placeholder="+598 ..." required />
 
       <label htmlFor="email">Email</label>
