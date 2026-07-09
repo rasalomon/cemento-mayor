@@ -9,6 +9,7 @@ import "./styles/base/utilities.css";
 import "./styles/globals.css";
 import "./styles/components/header.css";
 import "./styles/components/footer.css";
+import "./styles/components/floating-whatsapp.css";
 import "./styles/components/hero.css";
 import "./styles/components/cards.css";
 import "./styles/components/gallery.css";
