@@ -39,7 +39,6 @@ function ContactPage() {
             <p>Email: {COMPANY_EMAIL}</p>
             <p>Telefono: {WHATSAPP_NUMBER}</p>
             <p>Direccion: Ruta y dirección de oficina (placeholder)</p>
-            <p className="contact-card__env">API configurada: {API_URL}</p>
             <CTAButton href={whatsappLink} external>
               Escribir por WhatsApp
             </CTAButton>
