@@ -1,82 +1,92 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
-const CONCRETE_TYPES = [
-  "Hormig\u00F3n para pisos con fibra",
-  "Hormig\u00F3n Estructural",
-  "Hormig\u00F3n de P\u00E1pida Habilitaci\u00F3n",
-  "Hormig\u00F3n Autocompactante",
-  "Mortero Autonivelante",
+const resistencias = ["H20", "H25", "H30", "H35", "H40"];
+
+const fibras = ["Sin fibra", "Fibra sint\u00E9tica", "Fibra met\u00E1lica"];
+
+const tipos = [
+  "Estructural",
+  "Bombeable",
+  "Autocompactante",
+  "Limpieza",
   "RDC",
-  "Mortero 1:4",
+  "Mortero",
 ];
 
-const PRICE_PER_M3 = {
-  "Hormig\u00F3n para pisos con fibra": 7200,
-  "Hormig\u00F3n Estructural": 6800,
-  "Hormig\u00F3n de P\u00E1pida Habilitaci\u00F3n": 5900,
-  "Hormig\u00F3n Autocompactante": 8100,
-  "RDC": 5600,
-  "Mortero 1:4": 6100,
-};
-
-const currencyUYU = new Intl.NumberFormat("es-UY", {
-  style: "currency",
-  currency: "UYU",
-  maximumFractionDigits: 0,
-});
-
 function ConcreteCalculator() {
-  const [type, setType] = useState("");
-  const [volume, setVolume] = useState("");
-  const [location, setLocation] = useState("");
-  const [errors, setErrors] = useState({});
-  const [showResult, setShowResult] = useState(false);
+  const [resistencia, setResistencia] = useState("");
+  const [fibra, setFibra] = useState("");
+  const [tipo, setTipo] = useState("");
+  const [volumen, setVolumen] = useState("");
 
-  const total = useMemo(() => {
-    const numericVolume = Number(volume);
-    if (!type || !numericVolume || numericVolume <= 0) return 0;
-    return numericVolume * PRICE_PER_M3[type];
-  }, [type, volume]);
+  const handleCreateRequest = () => {
+    const solicitud = {
+      resistencia,
+      fibra,
+      tipo,
+      volumen: Number(volumen),
+    };
+
+    console.log("Solicitud hormig\u00F3n:", solicitud);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    const nextErrors = {};
-    const numericVolume = Number(volume);
-
-    if (!type) nextErrors.type = "Selecciona un tipo de hormig\u00F3n.";
-    if (!volume || Number.isNaN(numericVolume) || numericVolume <= 0) {
-      nextErrors.volume = "Ingresa un volumen v\u00E1lido mayor a 0.";
-    }
-    if (!location.trim()) nextErrors.location = "Ingresa la ubicaci\u00F3n de obra.";
-
-    setErrors(nextErrors);
-    setShowResult(Object.keys(nextErrors).length === 0);
+    handleCreateRequest();
   };
 
   return (
-    <aside className="calculator-card calculator-card--in-phone" aria-label="Calculadora de cotizaci\u00F3n de hormig\u00F3n">
+    <aside className="calculator-card calculator-card--in-phone" aria-label="Solicitud de hormigón">
       <div className="calculator-card__header">
-        <h2 className="calculator-card__title">COTIZACIÓN DE HORMIGÓN</h2>
+        <h2 className="calculator-card__title">SOLICITUD DE HORMIGÓN</h2>
         <div className="calculator-card__stripe" aria-hidden="true" />
       </div>
 
-      <form className="calculator-form" onSubmit={handleSubmit} noValidate>
-        <label htmlFor="concrete-type">Tipo de hormigón</label>
+      <form className="calculator-form" onSubmit={handleSubmit}>
+        <label htmlFor="concrete-resistance">Resistencia</label>
         <select
-          id="concrete-type"
-          value={type}
-          onChange={(event) => setType(event.target.value)}
-          aria-invalid={Boolean(errors.type)}
+          id="concrete-resistance"
+          value={resistencia}
+          onChange={(event) => setResistencia(event.target.value)}
+          required
         >
-          <option value="">Selecciona una opción</option>
-          {CONCRETE_TYPES.map((item) => (
+          <option value="">Seleccione resistencia</option>
+          {resistencias.map((item) => (
             <option key={item} value={item}>
               {item}
             </option>
           ))}
         </select>
-        {errors.type ? <p className="calculator-form__error">{errors.type}</p> : null}
+
+        <label htmlFor="concrete-fiber">Fibra</label>
+        <select
+          id="concrete-fiber"
+          value={fibra}
+          onChange={(event) => setFibra(event.target.value)}
+          required
+        >
+          <option value="">Seleccione fibra</option>
+          {fibras.map((item) => (
+            <option key={item} value={item}>
+              {item}
+            </option>
+          ))}
+        </select>
+
+        <label htmlFor="concrete-type">Tipo</label>
+        <select
+          id="concrete-type"
+          value={tipo}
+          onChange={(event) => setTipo(event.target.value)}
+          required
+        >
+          <option value="">Seleccione tipo</option>
+          {tipos.map((item) => (
+            <option key={item} value={item}>
+              {item}
+            </option>
+          ))}
+        </select>
 
         <label htmlFor="concrete-volume">Volumen (m3)</label>
         <input
@@ -84,37 +94,16 @@ function ConcreteCalculator() {
           type="number"
           min="0"
           step="0.1"
-          value={volume}
-          onChange={(event) => setVolume(event.target.value)}
-          placeholder="Ej: 12"
-          aria-invalid={Boolean(errors.volume)}
+          value={volumen}
+          onChange={(event) => setVolumen(event.target.value)}
+          placeholder="Ingrese metros cúbicos"
+          required
         />
-        {errors.volume ? <p className="calculator-form__error">{errors.volume}</p> : null}
-
-        <label htmlFor="concrete-location">Ubicacion de obra</label>
-        <input
-          id="concrete-location"
-          type="text"
-          value={location}
-          onChange={(event) => setLocation(event.target.value)}
-          placeholder="Ciudad / barrio"
-          aria-invalid={Boolean(errors.location)}
-        />
-        {errors.location ? <p className="calculator-form__error">{errors.location}</p> : null}
 
         <button type="submit" className="calculator-form__button">
-          CALCULAR PRECIO
+          VER SOLICITUD
         </button>
       </form>
-
-      {showResult ? (
-        <div className="calculator-result">
-          <p className="calculator-result__label">Total estimado</p>
-          <p className="calculator-result__value">{currencyUYU.format(total)}</p>
-          <p className="calculator-result__note">Incluye materiales, elaboracion y transporte.</p>
-          <p className="calculator-result__note">Cotizacion valida por 7 dias.</p>
-        </div>
-      ) : null}
     </aside>
   );
 }

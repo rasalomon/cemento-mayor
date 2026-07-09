@@ -1,8 +1,39 @@
 import CTAButton from "../common/CTAButton";
 
+const CONTACT_EMAIL = "ventas@cementomayor.com.uy";
+
+const serviceLabels = {
+  hormigon: "Hormigón elaborado",
+  bombeo: "Bombeo de hormigón",
+  pisos: "Pisos industriales",
+  asesoria: "Asesoria técnica",
+  custom: "Obra a medida",
+};
+
 function ContactForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+    const selectedService = serviceLabels[data.service] ?? data.service;
+
+    const subject = `Consulta web - ${data.name}`;
+    const body = [
+      "Nueva consulta desde el sitio web de Cemento Mayor:",
+      "",
+      `Nombre: ${data.name}`,
+      `Telefono: ${data.phone}`,
+      `Email: ${data.email}`,
+      `Servicio de interes: ${selectedService}`,
+      "",
+      "Mensaje:",
+      data.message,
+    ].join("\n");
+
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
   };
 
   return (
