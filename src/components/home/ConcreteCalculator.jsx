@@ -1,16 +1,13 @@
 import { useState } from "react";
 
-const resistencias = ["H20", "H25", "H30", "H35", "H40"];
+const resistencias = ["C15", "C20", "C25", "C30", "C35", "C40", "C45"];
 
-const fibras = ["Sin fibra", "Fibra sint\u00E9tica", "Fibra met\u00E1lica"];
+const fibras = ["Sin fibra", "Macro Fibra y Micro Fibra"];
 
 const tipos = [
-  "Estructural",
-  "Bombeable",
-  "Autocompactante",
-  "Limpieza",
-  "RDC",
-  "Mortero",
+  " Pedregullo (5-25mm)",
+  "Piedra Partida (5-20mm)",
+  "Gravillin (4-8mm)",
 ];
 
 function ConcreteCalculator() {
@@ -18,16 +15,23 @@ function ConcreteCalculator() {
   const [fibra, setFibra] = useState("");
   const [tipo, setTipo] = useState("");
   const [volumen, setVolumen] = useState("");
+  const [showRequest, setShowRequest] = useState(false);
 
   const handleCreateRequest = () => {
+    if (!resistencia || !fibra || !tipo || !volumen) {
+      setShowRequest(false);
+      return;
+    }
+
     const solicitud = {
       resistencia,
       fibra,
       tipo,
-      volumen: Number(volumen),
+      volumen,
     };
 
-    console.log("Solicitud hormig\u00F3n:", solicitud);
+    setShowRequest(true);
+    console.log("Solicitud hormigón:", solicitud);
   };
 
   const handleSubmit = (event) => {
@@ -38,7 +42,7 @@ function ConcreteCalculator() {
   return (
     <aside className="calculator-card calculator-card--in-phone" aria-label="Solicitud de hormigón">
       <div className="calculator-card__header">
-        <h2 className="calculator-card__title">SOLICITUD DE HORMIGÓN</h2>
+        <h2 className="calculator-card__title">COTIZACIÓN DE HORMIGÓN</h2>
         <div className="calculator-card__stripe" aria-hidden="true" />
       </div>
 
@@ -73,7 +77,7 @@ function ConcreteCalculator() {
           ))}
         </select>
 
-        <label htmlFor="concrete-type">Tipo</label>
+        <label htmlFor="concrete-type">Tipo de piedra</label>
         <select
           id="concrete-type"
           value={tipo}
@@ -104,6 +108,30 @@ function ConcreteCalculator() {
           VER SOLICITUD
         </button>
       </form>
+
+      {showRequest ? (
+        <div className="calculator-request-summary" aria-live="polite">
+          <h3>Resumen de solicitud</h3>
+          <dl>
+            <div>
+              <dt>Resistencia</dt>
+              <dd>{resistencia}</dd>
+            </div>
+            <div>
+              <dt>Fibra</dt>
+              <dd>{fibra}</dd>
+            </div>
+            <div>
+              <dt>Tipo</dt>
+              <dd>{tipo}</dd>
+            </div>
+            <div>
+              <dt>Volumen</dt>
+              <dd>{volumen} m³</dd>
+            </div>
+          </dl>
+        </div>
+      ) : null}
     </aside>
   );
 }

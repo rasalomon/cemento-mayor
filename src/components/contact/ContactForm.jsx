@@ -5,9 +5,7 @@ import { formatWhatsappLink } from "../../utils/formatters";
 const serviceLabels = {
   hormigon: "Hormigón elaborado",
   bombeo: "Bombeo de hormigón",
-  pisos: "Pisos industriales",
-  asesoria: "Asesoria técnica",
-  custom: "Obra a medida",
+  pisos: "Regla laser para pisos",
 };
 
 function ContactForm() {
@@ -18,9 +16,14 @@ function ContactForm() {
     const nombre = formData.get("name");
     const telefono = formData.get("phone");
     const email = formData.get("email");
-    const servicio = formData.get("service");
+    const servicios = formData.getAll("service");
     const mensaje = formData.get("message");
-    const servicioInteres = serviceLabels[servicio] ?? servicio;
+    const serviciosInteres = servicios.map((servicio) => serviceLabels[servicio] ?? servicio);
+
+    if (serviciosInteres.length === 0) {
+      window.alert("Selecciona al menos un servicio de interes.");
+      return;
+    }
 
     const whatsappMessage = [
       "Hola Cemento Mayor, quiero hacer una consulta.",
@@ -28,7 +31,7 @@ function ContactForm() {
       `Nombre: ${nombre}`,
       `Telefono: ${telefono}`,
       `Email: ${email}`,
-      `Servicio de interes: ${servicioInteres}`,
+      `Servicios de interes: ${serviciosInteres.join(", ")}`,
       "",
       "Mensaje:",
       mensaje,
@@ -48,15 +51,21 @@ function ContactForm() {
       <label htmlFor="email">Email</label>
       <input id="email" name="email" type="email" placeholder="nombre@empresa.com" required />
 
-      <label htmlFor="service">Servicio de interes</label>
-      <select id="service" name="service" required>
-        <option value="">Selecciona un servicio</option>
-        <option value="hormigon">Hormigón elaborado</option>
-        <option value="bombeo">Bombeo de hormigón</option>
-        <option value="pisos">Pisos industriales</option>
-        <option value="asesoria">Asesoria técnica</option>
-        <option value="custom">Obra a medida</option>
-      </select>
+      <fieldset className="contact-form__checkbox-group">
+        <legend>Servicios de interes</legend>
+        <label>
+          <input name="service" type="checkbox" value="hormigon" />
+          <span>Hormigón elaborado</span>
+        </label>
+        <label>
+          <input name="service" type="checkbox" value="bombeo" />
+          <span>Bombeo de hormigón</span>
+        </label>
+        <label>
+          <input name="service" type="checkbox" value="pisos" />
+          <span>Regla laser para pisos</span>
+        </label>
+      </fieldset>
 
       <label htmlFor="message">Mensaje</label>
       <textarea id="message" name="message" rows="5" placeholder="Contanos sobre tu proyecto..." required />

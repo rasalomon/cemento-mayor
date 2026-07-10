@@ -3,7 +3,7 @@ const services = [
     id: "planta-mezcladora",
     title: "Planta Mezcladora",
     description:
-      "Suministro de hormigón de alta calidad con control técnico para obras residenciales, comerciales e industriales.",
+      "Suministro de hormigón de alta calidad con controlllll técnico para obras residenciales, comerciales e industriales.",
     image: "/images/gallery/PM.png",
     imageOnly: true,
   },
