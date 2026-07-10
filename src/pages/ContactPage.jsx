@@ -38,7 +38,6 @@ function ContactPage() {
             <h3>Canales directos</h3>
             <p>Email: {COMPANY_EMAIL}</p>
             <p>Telefono: {WHATSAPP_NUMBER}</p>
-            <p>Direccion: Ruta y dirección de oficina (placeholder)</p>
             <CTAButton href={whatsappLink} external>
               Escribir por WhatsApp
             </CTAButton>

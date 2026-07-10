@@ -3,9 +3,31 @@ import Container from "../components/common/Container";
 import SectionTitle from "../components/common/SectionTitle";
 import ServiceCard from "../components/services/ServiceCard";
 import CTAButton from "../components/common/CTAButton";
-import services from "../data/services";
-import companyInfo from "../data/company";
 import useDocumentTitle from "../hooks/useDocumentTitle";
+
+const featuredServices = [
+  {
+    id: "bombeo-hormigon",
+    image: "/images/gallery/BO-HO.png",
+    // title: "Bombeo de hormigón",
+    // description:
+    //   "Servicio especializado de bombeo para colocar hormigón de forma rápida, segura y eficiente en cualquier tipo de obra.",
+  },
+  {
+    id: "hormigon-elaborado",
+    image: "/images/gallery/HO-EL.png",
+    // title: "Hormigón elaborado",
+    // description:
+    //   "Hormigón de alta calidad producido bajo controles técnicos para proyectos residenciales, comerciales e industriales.",
+  },
+  {
+    id: "pisos-industriales",
+    image: "/images/gallery/PI-IN.png",
+    // title: "Pisos industriales",
+    // description:
+    //   "Soluciones profesionales para pisos de alta resistencia, nivelación y terminaciones industriales.",
+  },
+];
 
 function HomePage() {
   useDocumentTitle("Inicio");
@@ -14,14 +36,13 @@ function HomePage() {
     <>
       <HeroSection />
 
-      <section className="section-block">
+      <section className="section-block home-banner-section">
         <Container>
-          <SectionTitle
-            eyebrow="Bienvenidos"
-            title="Compromiso técnico para tus Obras"
-            subtitle="Trabajamos con procesos claros y supervisión constante para garantizar calidad en cada etapa."
+          <img
+            src="/images/gallery/Banner 2.png"
+            alt="Cemento Mayor"
+            className="home-banner-image"
           />
-          <p className="home-intro-text">{companyInfo.intro}</p>
         </Container>
       </section>
 
@@ -34,8 +55,13 @@ function HomePage() {
             centered
           />
           <div className="cards-grid cards-grid--three">
-            {services.slice(0, 3).map((service) => (
-              <ServiceCard key={service.id} title={service.title} description={service.description} />
+            {featuredServices.map((service) => (
+              <ServiceCard
+                key={service.id}
+                image={service.image}
+                title={service.title}
+                description={service.description}
+              />
             ))}
           </div>
         </Container>
