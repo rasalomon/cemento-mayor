@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { WHATSAPP_NUMBER } from "../../constants";
+import { formatWhatsappLink } from "../../utils/formatters";
 
 const resistencias = ["C15", "C20", "C25", "C30", "C35", "C40", "C45"];
 
@@ -16,6 +18,20 @@ function ConcreteCalculator() {
   const [tipo, setTipo] = useState("");
   const [volumen, setVolumen] = useState("");
   const [showRequest, setShowRequest] = useState(false);
+  const [showCustomerForm, setShowCustomerForm] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState("idle");
+  const [submitMessage, setSubmitMessage] = useState("");
+
+  const resetQuotation = () => {
+    setResistencia("");
+    setFibra("");
+    setTipo("");
+    setVolumen("");
+    setShowRequest(false);
+    setShowCustomerForm(false);
+    setSubmitStatus("idle");
+    setSubmitMessage("");
+  };
 
   const handleCreateRequest = () => {
     if (!resistencia || !fibra || !tipo || !volumen) {
@@ -31,12 +47,48 @@ function ConcreteCalculator() {
     };
 
     setShowRequest(true);
+    setShowCustomerForm(false);
+    setSubmitStatus("idle");
+    setSubmitMessage("");
     console.log("Solicitud hormigón:", solicitud);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     handleCreateRequest();
+  };
+
+  const handleRequestSubmit = (event) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const customerName = formData.get("name");
+    const customerEmail = formData.get("email");
+    const customerMessage = formData.get("message");
+
+    const whatsappMessage =
+      [
+        "Hola Cemento Mayor, quiero solicitar una cotización de hormigón.",
+        "",
+        `Nombre: ${customerName}`,
+        `Email: ${customerEmail}`,
+        "",
+        "Mensaje:",
+        customerMessage,
+        "",
+        "Resumen de solicitud:",
+        `Resistencia: ${resistencia}`,
+        `Fibra: ${fibra}`,
+        `Tipo de piedra: ${tipo.trim()}`,
+        `Volumen: ${volumen} m³`,
+      ].join("\n");
+
+    window.open(formatWhatsappLink(WHATSAPP_NUMBER, whatsappMessage), "_blank", "noopener,noreferrer");
+    form.reset();
+    resetQuotation();
+    setSubmitStatus("success");
+    setSubmitMessage("Se abrió WhatsApp con los datos de la solicitud.");
   };
 
   return (
@@ -104,9 +156,18 @@ function ConcreteCalculator() {
           required
         />
 
-        <button type="submit" className="calculator-form__button">
-          VER SOLICITUD
-        </button>
+        <div className="calculator-form__actions">
+          <button type="submit" className="calculator-form__button">
+            VER SOLICITUD
+          </button>
+          <button
+            type="button"
+            className="calculator-form__clear"
+            onClick={resetQuotation}
+          >
+            LIMPIAR
+          </button>
+        </div>
       </form>
 
       {showRequest ? (
@@ -130,7 +191,40 @@ function ConcreteCalculator() {
               <dd>{volumen} m³</dd>
             </div>
           </dl>
+
+          {!showCustomerForm ? (
+            <button
+              type="button"
+              className="calculator-request-summary__send"
+              onClick={() => setShowCustomerForm(true)}
+            >
+              ENVIAR
+            </button>
+          ) : null}
+
+          {showCustomerForm ? (
+            <form className="calculator-customer-form" onSubmit={handleRequestSubmit}>
+              <h4>Datos de contacto</h4>
+
+              <label htmlFor="request-name">Nombre</label>
+              <input id="request-name" name="name" type="text" autoComplete="name" required />
+
+              <label htmlFor="request-email">Email</label>
+              <input id="request-email" name="email" type="email" autoComplete="email" required />
+
+              <label htmlFor="request-message">Mensaje</label>
+              <textarea id="request-message" name="message" rows="3" required />
+
+              <button type="submit">ENVIAR POR WHATSAPP</button>
+            </form>
+          ) : null}
         </div>
+      ) : null}
+
+      {submitMessage ? (
+        <p className={`calculator-submit-message calculator-submit-message--${submitStatus}`} role="status">
+          {submitMessage}
+        </p>
       ) : null}
     </aside>
   );
