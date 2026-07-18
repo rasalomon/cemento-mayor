@@ -17,3 +17,8 @@ yarn-error.log*
 .idea/
 .DS_Store
 Thumbs.db
+
+# SEO files (override broad global public/ ignore rules)
+!public/
+!public/robots.txt
+!public/sitemap.xml
