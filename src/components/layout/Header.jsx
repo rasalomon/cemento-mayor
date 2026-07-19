@@ -11,7 +11,12 @@ function Header() {
     <header className="site-header">
       <Container className="site-header__inner">
         <NavLink to="/" className="site-logo" aria-label={`${APP_NAME} inicio`}>
-          <span className="site-logo__mark">CM</span>
+          <img
+            className="site-logo__mark"
+            src="/images/gallery/Icono.png"
+            alt=""
+            aria-hidden="true"
+          />
           <span>{APP_NAME}</span>
         </NavLink>
 

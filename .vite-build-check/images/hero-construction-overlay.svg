@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <rect width="1600" height="900" fill="#ffffff"/>
+  <g opacity="0.22" stroke="#1f1f1f" stroke-width="4">
+    <rect x="980" y="210" width="360" height="430"/>
+    <line x1="980" y1="320" x2="1340" y2="320"/>
+    <line x1="980" y1="430" x2="1340" y2="430"/>
+    <line x1="980" y1="540" x2="1340" y2="540"/>
+    <line x1="1100" y1="210" x2="1100" y2="640"/>
+    <line x1="1220" y1="210" x2="1220" y2="640"/>
+  </g>
+  <g opacity="0.2">
+    <rect x="190" y="610" width="420" height="92" rx="14" fill="#d3a63f"/>
+    <rect x="260" y="560" width="220" height="70" rx="10" fill="#272727"/>
+    <rect x="490" y="540" width="120" height="90" rx="10" fill="#3a3a3a"/>
+    <circle cx="290" cy="730" r="38" fill="#222"/>
+    <circle cx="520" cy="730" r="38" fill="#222"/>
+    <circle cx="290" cy="730" r="18" fill="#d9d9d9"/>
+    <circle cx="520" cy="730" r="18" fill="#d9d9d9"/>
+    <path d="M640 500L810 430L840 510L670 580Z" fill="#1f1f1f"/>
+  </g>
+</svg>
