@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.cementomayor.com/sitemap.xml
+Sitemap: https://www.cementomayor.com.uy/sitemap.xml
