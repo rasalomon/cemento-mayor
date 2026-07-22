@@ -39,7 +39,7 @@ function HomePage() {
       <section className="section-block home-banner-section">
         <Container>
           <img
-            src="/images/gallery/Banner 2.png"
+            src="/images/gallery/Banner2.png"
             alt="Cemento Mayor"
             className="home-banner-image"
           />
